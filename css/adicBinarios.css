@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal {
+    height: 100vh;
+    width: 100vw;
+    color: #000;
+    background-color: #f9f9f9;
+    font-family: "Kode Mono";
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.principal__container {
+    margin-top: 3em;
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo titulo"
+        "input1 input2 btn result"
+    ;
+    justify-content: center;
+}
+
+.principal__container-titulo {
+    text-align: center;
+    grid-area: titulo;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.cabecalho {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho_menu {
+    display: flex;
+    gap: 3em;
+}
+
+.cabecalho_menu-itens {
+    list-style-type: none;
+}
+
+.cabecalho-menu--links {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.cabecalho-menu--links:hover {
+    color: #219EBC;
+}
+
+.secao__soma {
+    width: 100%;
+    display: flex;
+    column-gap: 0.3em;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.btn-soma1 {
+    grid-area: input1;
+
+}
+
+.btn-soma2 {
+    grid-area: input2;
+}
+
+.btn-soma1,
+.btn-soma2 {
+    height: 40px;
+    padding: 0 0.5em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-family: "Kode Mono";
+    max-width: 220px;
+    min-width: 220px;
+    transition: 0.3s;
+    -webkit-box-shadow: 1px 0px 11px -4px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 1px 0px 11px -4px rgba(66, 68, 90, 1);
+    box-shadow: 1px 0px 11px -4px rgba(66, 68, 90, 1);
+}
+
+.fa-plus {
+    grid-area: btn;
+    background-color: #219EBC;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+}
+
+.result_soma {
+    grid-area: result;
+    margin-left: 1em;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    transition: 0.2s;
+}
+
+.rodape {
+    padding: 0 2em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2em;
+    width: 100%;
+    font-family: "Kode Mono";
+}
+
+@media screen and (max-width: 500px) {
+    .cabecalho_menu{
+        flex-direction: column;
+        gap: 0.1em;
+        align-items: center;
+    }
+    .principal__container {
+        display: flex;
+        flex-direction: column;
+    }
+    .principal__container-titulo{
+        font-size: 1em;
+        text-align: center;
+        padding: 0 0.5em;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .secao__soma {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .fa-plus {
+        width: 100%;
+    }
+
+    .result_soma {
+        margin: 2em 0
+    }
+}

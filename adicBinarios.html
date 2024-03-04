@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Binários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/adicBinarios.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main class="principal">
+        <nav class="cabecalho">
+            <ul class="cabecalho_menu">
+                <li class="cabecalho_menu-itens">
+                    <a href="/index.html" class="cabecalho-menu--links">
+                        Conversão
+                    </a>
+                <li class="cabecalho_menu-itens">
+                    <a href="/adicBinarios.html" class="cabecalho-menu--links">
+                        Adição de Binarios
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section class="principal__container">
+            <h4 class="principal__container-titulo">
+                Soma entre 2 números binários
+            </h4>
+            <div class="secao__soma">
+                <div class="inputs">
+                    <input type="number" class="btn-soma1" id="bin_num1" placeholder="Insira um número">
+                    <input type="number" class="btn-soma2" id="bin_num2" placeholder="Insira um número">
+                    <i class="fa-solid fa-plus" onclick="resultSomaBin()"></i>
+                </div>
+                <div class="result_soma" id="resultado_soma">0</div>
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        Criado e Desenvolvido por João Vitor dos Anjos Godoi - <strong>github.com/jvGodoi</strong>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
