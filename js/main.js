@@ -1,9 +1,9 @@
 
 // Função Para Realizar o Cálculo da Conversão de Decimal para Binário
 
-function calcDecParaBin(n1){
+function calcDecParaBin(n1) {
     let bin = []
-    while(n1 > 0){
+    while (n1 > 0) {
         var resto = n1 % 2;
         bin.push(resto);
         n1 = Math.floor(n1 / 2)
@@ -14,7 +14,7 @@ function calcDecParaBin(n1){
 
 // Função Para Retornar o Resultado da Conversão de Decimal para Binário
 
-function resultCalcDecParaBin(){
+function resultCalcDecParaBin() {
     let dec = parseInt(document.getElementById("btn_bin").value)
     let bin = calcDecParaBin(dec)
     document.getElementById("result_convert--bin-dec").innerText = bin;
@@ -22,12 +22,12 @@ function resultCalcDecParaBin(){
 
 // Função Para Realizar o Cálculo da Conversão de Binário para Decimal
 
-function calcBinParaDec(num){
+function calcBinParaDec(num) {
     let tamanho = num.length
     let decimal = 0;
     let i;
 
-    for(i = tamanho - 1; i >= 0; i--){
+    for (i = tamanho - 1; i >= 0; i--) {
         var digito = parseInt(num[i])
         var potencia = Math.pow(2, tamanho - 1 - i);
         decimal = decimal + (digito * potencia)
@@ -37,11 +37,13 @@ function calcBinParaDec(num){
 
 // Função Para Retornar o Resultado da Conversão de Binário para Decimal
 
-function resultCalcBinParaDec(){
+function resultCalcBinParaDec() {
     let numeroBinario = document.getElementById("btn_dec").value
-    let resultado = calcBinParaDec (numeroBinario)
+    let resultado = calcBinParaDec(numeroBinario)
     document.getElementById("result_convert--dec-bin").innerText = resultado
 }
+
+// Função para realizar a soma entre os binários
 
 function soma(bin1, bin2) {
     var resultado = ""
@@ -70,9 +72,70 @@ function soma(bin1, bin2) {
     return resultado
 }
 
-function resultSomaBin(){
+// Função para retornar a soma dos binários
+
+function resultSomaBin() {
     let binario1 = document.getElementById("bin_num1").value
     let binario2 = document.getElementById("bin_num2").value
     let resultado = soma(binario1, binario2)
     document.getElementById("resultado_soma").innerText = resultado
+}
+
+// Função para calcular a subtração entre dois binários
+
+function subtracao(bin1, bin2) {
+
+    while (bin1.length < bin2.length) {
+        bin1 = "0" + bin1;
+    }
+    while (bin2.length < bin1.length) {
+        bin2 = "0" + bin2;
+    }
+
+    var resultado = "";
+    var emprestimo = 0;
+
+    for (var i = bin1.length - 1; i >= 0; i--) {
+        var bit1 = parseInt(bin1[i]);
+        var bit2 = parseInt(bin2[i]);
+
+        bit1 -= emprestimo;
+
+        if (bit1 < bit2) {
+            bit1 += 2;
+            emprestimo = 1;
+        } else {
+            emprestimo = 0;
+        }
+
+        var diferenca = bit1 - bit2;
+        resultado = diferenca.toString() + resultado;
+    }
+
+    if (resultado === "") {
+        resultado = "0";
+    }
+
+    return resultado;
+}
+
+// Função para retornar o resultado da subtração entre dois binários
+function resultSubBin() {
+    let binario1 = document.getElementById("bin_sub_1").value
+    let binario2 = document.getElementById("bin_sub_2").value
+    let resultado = subtracao(binario1, binario2)
+    document.getElementById("resultado_sub").innerText = resultado
+}
+
+function multBinarios (binario1, binario2){
+    let int1 = parseInt(binario1, 2)
+    let int2 = parseInt(binario2, 2)
+    return (int1 * int2).toString(2)
+}
+
+function resultMultBinarios(){
+    let binario1 = document.getElementById("bin_num1").value
+    let binario2 = document.getElementById("bin_num2").value
+    let resultado = multBinarios(binario1, binario2)
+    document.getElementById("resultado_mult").innerText = resultado
 }

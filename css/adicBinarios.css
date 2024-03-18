@@ -15,6 +15,14 @@
     flex-direction: column;
 }
 
+.container__conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7em;
+}
+
 .principal__container {
     margin-top: 3em;
     display: grid;
@@ -60,7 +68,8 @@
     color: #219EBC;
 }
 
-.secao__soma {
+.secao__soma,
+.secao__sub {
     width: 100%;
     display: flex;
     column-gap: 0.3em;
@@ -68,17 +77,21 @@
     margin-top: 2em;
 }
 
-.btn-soma1 {
+.btn-soma1,
+.btn-sub1 {
     grid-area: input1;
 
 }
 
-.btn-soma2 {
+.btn-soma2,
+.btn-sub2 {
     grid-area: input2;
 }
 
 .btn-soma1,
-.btn-soma2 {
+.btn-soma2,
+.btn-sub1,
+.btn-sub2 {
     height: 40px;
     padding: 0 0.5em;
     border-radius: 5px;
@@ -93,6 +106,19 @@
     box-shadow: 1px 0px 11px -4px rgba(66, 68, 90, 1);
 }
 
+.btn_result_ {
+    grid-area: btn;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    transition: 0.2s;
+    background-color: transparent;
+}
+
 .fa-plus {
     grid-area: btn;
     background-color: #219EBC;
@@ -104,7 +130,8 @@
     text-align: center;
 }
 
-.result_soma {
+.result_soma,
+.result_sub {
     grid-area: result;
     margin-left: 1em;
     border: none;
@@ -126,27 +153,31 @@
 }
 
 @media screen and (max-width: 500px) {
-    .cabecalho_menu{
+    .cabecalho_menu {
         flex-direction: column;
         gap: 0.1em;
         align-items: center;
     }
+
     .principal__container {
         display: flex;
         flex-direction: column;
     }
-    .principal__container-titulo{
+
+    .principal__container-titulo {
         font-size: 1em;
         text-align: center;
         padding: 0 0.5em;
     }
+
     .inputs {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .secao__soma {
+    .secao__soma,
+    .secao__sub {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -157,7 +188,8 @@
         width: 100%;
     }
 
-    .result_soma {
+    .result_soma,
+    .result_sub {
         margin: 2em 0
     }
 }

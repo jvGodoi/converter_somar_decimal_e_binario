@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adição e Subtração de Binários</title>
+    <title> Multiplicação de Binarios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
@@ -38,30 +38,16 @@
         <section class="container__conteudo">
             <section class="principal__container">
                 <h4 class="principal__container-titulo">
-                    Soma entre 2 números binários
+                    Multiplicação entre 2 números binários
                 </h4>
                 <div class="secao__soma">
                     <div class="inputs">
                         <input type="number" class="btn-soma1" id="bin_num1" placeholder="Insira um número">
-                        <span class="sum">+</span>
+                        <span class="sum">*</span>
                         <input type="number" class="btn-soma2" id="bin_num2" placeholder="Insira um número">
-                        <input type="button" value="=" class="btn_result_" onclick="resultSomaBin()">
+                        <input type="button" value="=" class="btn_result_" onclick="resultMultBinarios()">
                     </div>
-                    <div class="result_soma" id="resultado_soma">0</div>
-                </div>
-            </section>
-            <section class="principal__container">
-                <h4 class="principal__container-titulo">
-                    Subtração entre 2 números binários
-                </h4>
-                <div class="secao__sub">
-                    <div class="inputs">
-                        <input type="number" class="btn-sub1" id="bin_sub_1" placeholder="Insira um número">
-                        <span class="hifen">-</span>
-                        <input type="number" class="btn-sub2" id="bin_sub_2" placeholder="Insira um número">
-                        <input type="button" value="=" class="btn_result_" onclick="resultSubBin()">
-                    </div>
-                    <div class="result_sub" id="resultado_sub">0</div>
+                    <div class="result_soma" id="resultado_mult">0</div>
                 </div>
             </section>
         </section>
